@@ -10,7 +10,7 @@ import java.sql.*;
 @Path("/v1/status")
 public class V1_status {
 	
-	private static final String api_version= "00.01.00";
+	private static final String api_version= "00.02.00";
 	@GET
 	@Produces(MediaType.TEXT_HTML)
 	public String returnTitle() {
@@ -23,11 +23,11 @@ public class V1_status {
 	public String returnVersion() {
 		return "<p>version:</p>" + api_version;
 	}
-	/*
+	
 	@Path("/database")
 	@GET
 	@Produces(MediaType.TEXT_HTML)
-	public String returnDatabaseStatus() {
+	public String returnDatabaseStatus() throws Exception {
 		PreparedStatement query = null;
 		String myString = null;
 		String returnString = null;
@@ -49,10 +49,9 @@ public class V1_status {
 		}
 		finally {
 			if (conn != null) conn.close();
-			
 		}
 		return returnString;
 	}
-	*/
+	
 
 }
